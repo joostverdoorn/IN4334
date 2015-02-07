@@ -400,6 +400,10 @@ Knowledge of natural languages
 Preferable working hours
 \end_layout
 
+\begin_layout Standard
+TODO: Wat doen met data?
+\end_layout
+
 \begin_layout Subsection
 Mining more data
 \end_layout
@@ -478,12 +482,52 @@ key "Gousi13"
 Twitter
 \end_layout
 
+\begin_layout Standard
+TODO
+\end_layout
+
 \begin_layout Subsubsection
 LinkedIn
 \end_layout
 
+\begin_layout Standard
+TODO
+\end_layout
+
 \begin_layout Subsubsection
 Google+
+\end_layout
+
+\begin_layout Standard
+TODO
+\end_layout
+
+\begin_layout Subsection
+Storing the data
+\end_layout
+
+\begin_layout Standard
+The entire StackOverflow data dump has a size of just below 90 gigabytes.
+ In addition to this we had to account for the size of all extra data we
+ scraped.
+ Since the goal was to create something that resembles a search engine to
+ find people within this data, the speed at which the data could be retrieved
+ was of great importance.
+ For example to get the tags, a set of keywords describing what a question
+ is about on StackOverflow, a user ever used, in the original StackOverflow
+ data dump one would have to get the user identification, the look all questions
+ posted by this user up, and then iterate over all these questions and parse
+ the tags, which are stored as a continous string within the StackOverflow
+ data dump.
+ This can be very time and/or resource consuming with databases of this
+ size.
+ To prevent this, the decision was made to denormalize the entire StackOverflow
+ data dump and store essential information we needed directly within the
+ object of a user.
+ Since not everyone would ever use the same tags (StackOverflow had more
+ than 38.000 tags at the time the data dump was created), a relational database
+ with for example one column per tag would be a weird design.
+ Finally, as database software, we picked the NoSQL database MongoDB.
 \end_layout
 
 \begin_layout Section
