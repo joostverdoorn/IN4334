@@ -33,8 +33,8 @@
 \paperfontsize default
 \spacing single
 \use_hyperref true
-\pdf_title "Your Title"
-\pdf_author "Your Name"
+\pdf_title "Using the StackOverflow data dump to find qualified personnel"
+\pdf_author "Jasper Abbink, Joost Verdoorn"
 \pdf_bookmarks true
 \pdf_bookmarksnumbered true
 \pdf_bookmarksopen true
@@ -88,7 +88,7 @@
 \begin_body
 
 \begin_layout Title
-Using the StackOverflow to find qualified personnel
+Using the StackOverflow data dump to find qualified personnel
 \end_layout
 
 \begin_layout Author
@@ -254,6 +254,13 @@ As we only received the StackOverflow database, one part of the research
 
 \begin_layout Subsection
 Orientation
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Orientation"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -326,7 +333,23 @@ About Me
 \end_inset
 
  section of the StackOverflow profiles we could deduce many profiles from
- sites like Google+, Twitter, LinkedIn and GitHub.
+ sites like 
+\emph on
+Google
+\emph default
++, 
+\emph on
+Twitter
+\emph default
+, 
+\emph on
+LinkedIn
+\emph default
+ and 
+\emph on
+GitHub
+\emph default
+.
  All these sites give at least the name of the user and possibly hold a
  different online alias or username for that person.
  This online alias helps to link to profiles on other sites that the user
@@ -405,6 +428,19 @@ Most Facebook profiles from the StackOverflow data dump come from the avatar,
  non-paying customers.
  This substantially reduces the speed at which downloading this information
  is possible.
+\end_layout
+
+\begin_layout Standard
+Also, as pointed out in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Orientation"
+
+\end_inset
+
+, Facebook hardly gives away any information to non-paying customers, whereas
+ the other services are more willingly to disclose private information of
+ their users.
 \end_layout
 
 \begin_layout Subsubsection
