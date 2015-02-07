@@ -130,7 +130,7 @@ status open
 
 
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Jasper
@@ -562,6 +562,14 @@ Linking the profiles
 
 \begin_layout Standard
 TODO
+\end_layout
+
+\begin_layout Subsection
+Searching within the data
+\end_layout
+
+\begin_layout Standard
+TODO: elasticsearch
 \end_layout
 
 \begin_layout Section
