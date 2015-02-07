@@ -400,8 +400,27 @@ Knowledge of natural languages
 Preferable working hours
 \end_layout
 
+\begin_layout Subsection
+Goal
+\end_layout
+
 \begin_layout Standard
-TODO: Wat doen met data?
+With this data potentially at our fingertips we had to think about what
+ this could be used for.
+ Since this is quite a lot of information that all these profile websites
+ are giving away for free when combined, we thought that this could be ideally
+ used to find good software developers, something recruiters nowadays either
+ do in the traditional way (post job listings online/in papers) or pay LinkedIn
+ for (can be very expensive and unfruitful).
+ But when all this data is properly combined, it should be easy and cheap
+ for a company to quickly find people who would be suitable for a specific
+ job.
+ Of course this cannot, at this moment, replace all other forms of recruitment,
+ because not every smart person is active on any of those profile websites
+ or they made it very hard to construct this complete identity.
+ Furthermore this is only applicable to software development as there are
+ no vast online communities for other markets, comparable to what StackOverflow
+ is for software development.
 \end_layout
 
 \begin_layout Subsection
