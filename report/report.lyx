@@ -123,14 +123,14 @@ Verdoorn,
 status open
 
 \begin_layout Plain Layout
-###
+1545396
 \end_layout
 
 \end_inset
 
 
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Jasper
@@ -153,18 +153,19 @@ type "mailto:"
 
 
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
-Second
+Joost
 \begin_inset space ~
 \end_inset
 
-Name is with the Department of ..., ...
- Institute of ..., City, Country, e-mail: 
+Verdoorn is a MSc Software Technology student of Delft University of Technology,
+ Faculty EEMCS, Delft, Netherlands, e-mail: 
 \begin_inset CommandInset href
 LatexCommand href
-target "xxx@xxx.xxx"
+target "jverdoorn@student.tudelft.nl"
+type "mailto:"
 
 \end_inset
 
@@ -177,8 +178,12 @@ target "xxx@xxx.xxx"
 \end_layout
 
 \begin_layout Abstract
-This is the abstract text.
- TODO
+We show that, using only open data, it is possible to construct detailed
+ profiles StackOverflow users.
+ We crossmatched the user data provided by the StackOverflow data dump with
+ other sources of user information, such as GitHub, Facebook and Twitter.
+ ...
+ MORE TODO
 \end_layout
 
 \begin_layout Section
@@ -194,35 +199,26 @@ status open
 status open
 
 \begin_layout Plain Layout
-H
+F
 \end_layout
 
 \end_inset
 
-ere
+inding
 \end_layout
 
 \end_inset
 
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-The 
-\series bold
-
-\backslash
-IEEEPARstart
-\series default
- command is needed in the first paragraph of the document.
-\end_layout
-
-\end_inset
-
- is the text text text text text text text text text text text text text
- text text text.
- TODO
+ qualified potential employees is big bussiness in the IT sector.
+ As the sector grows, the scarcity of skilled workers means that more and
+ more resources are spent finding the right people for the job.
+ At the same time, an all-time high number of developers participate in
+ what has become known as social coding: they start open-source projects,
+ discuss code and help each other online.
+ Popular forums of these interactions, such as StackOverflow, GitHub and
+ Twitter, have APIs available that can be used to retrieving this data for
+ analysis.
+ 
 \end_layout
 
 \begin_layout Section
@@ -635,7 +631,20 @@ Searching within the data
 \end_layout
 
 \begin_layout Standard
-TODO: elasticsearch
+To be able to search, score and rank our data, the open source search engine
+ ElasticSearch was used.
+ The usage of ElasticSearch has several benefits: although it is possible
+ to use MongoDB's MapReduce queries for searching and scoring the data,
+ ElasticSearch was built for this purpose.
+ Besides that, ElasticSearch is great at fuzzy searches, which makes it
+ easier to approximately match strings representing languages and technologies.
+ Using the MongoDB River extension for ElasticSearch we were able to have
+ the ElasticSearch index update whenever the data in MongoDB was changed.
+ 
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Section
