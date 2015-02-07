@@ -130,18 +130,19 @@ status open
 
 
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
-Your
+Jasper
 \begin_inset space ~
 \end_inset
 
-Name is with the Department of ..., ...
- Institute of ..., City, Country, e-mail: 
+Abbink is a MSc Software Technology student of Delft University of Technology,
+ Faculty EEMCS, Delft, Netherlands, e-mail: 
 \begin_inset CommandInset href
 LatexCommand href
-target "xxx@xxx.xxx"
+target "tudelft@abb.ink"
+type "mailto:"
 
 \end_inset
 
