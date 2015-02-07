@@ -173,28 +173,6 @@ target "xxx@xxx.xxx"
 \end_inset
 
 
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Third
-\begin_inset space ~
-\end_inset
-
-Name is with the Department of ..., ...
- Institute of ..., City, Country, e-mail: 
-\begin_inset CommandInset href
-LatexCommand href
-target "xxx@xxx.xxx"
-
-\end_inset
-
-.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Abstract
@@ -297,7 +275,14 @@ Unfortunately this was not very much and during our initial research we
 \end_layout
 
 \begin_layout Standard
-For this we applied techniques from ###DDS###.
+For this we applied techniques from Doing Data Science 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "dds"
+
+\end_inset
+
+.
  We especially tried to apply the k-Nearest Neighbors 
 \begin_inset Quotes eld
 \end_inset
@@ -315,6 +300,78 @@ algorithm
 \begin_layout Standard
 After this failed attempt we went one step backwards to find a new angle
  to approach this data.
+ Since we already downloaded many Facebook user profiles, we went further
+ into that direction and started to look for other online profiles that
+ give more insight into a user.
+ Via the 
+\begin_inset Quotes eld
+\end_inset
+
+About Me
+\begin_inset Quotes erd
+\end_inset
+
+ section of the StackOverflow profiles we could deduce many profiles from
+ sites like Google+, Twitter, LinkedIn and GitHub.
+ All these sites give at least the name of the user and possibly hold a
+ different online alias or username for that person.
+ This online alias helps to link to profiles on other sites that the user
+ on StackOverflow did not explicitly specified.
+\end_layout
+
+\begin_layout Standard
+Another data point many sites have is the location of the user.
+ Together with an online service to convert this to coordinates on the globe
+ (we used Microsoft Bing for this due to the high request limit they offer)
+ insights can be gained about the specific location of the user, assuming
+ this was entered correctly.
+\end_layout
+
+\begin_layout Standard
+Other data points these sites offer include:
+\end_layout
+
+\begin_layout Itemize
+Birthday
+\end_layout
+
+\begin_layout Itemize
+Programming languages a user is interested in
+\end_layout
+
+\begin_layout Itemize
+Programming languages a user has proven experience with
+\end_layout
+
+\begin_layout Itemize
+Hobbies
+\end_layout
+
+\begin_layout Itemize
+Work history
+\end_layout
+
+\begin_layout Itemize
+Education
+\end_layout
+
+\begin_layout Itemize
+Knowledge of natural languages
+\end_layout
+
+\begin_layout Itemize
+Preferable working hours
+\end_layout
+
+\begin_layout Standard
+To not reinvent the wheel, we used the data available by GHTorrent 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gousi13"
+
+\end_inset
+
+ which quickly gave us access to an offline copy of the GitHub data.
 \end_layout
 
 \begin_layout Section
@@ -473,6 +530,17 @@ key "IEEEexample:beebe_archive"
 
 \begin_layout Section
 Second appendix
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "bibtex"
+options "plain"
+
+\end_inset
+
+
 \end_layout
 
 \end_body
