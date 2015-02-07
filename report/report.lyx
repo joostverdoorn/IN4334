@@ -391,19 +391,49 @@ The StackOverflow database is available as a single download, but the data
 Facebook
 \end_layout
 
+\begin_layout Standard
+Most Facebook profiles from the StackOverflow data dump come from the avatar,
+ an image identifying a user on a website, of a user profile.
+ Since all accounts linked to Facebook automatically get their Facebook
+ profile picture set as avatar on StackOverflow, these URL's are easy to
+ spot.
+ These URL's are also in a standardized format and contain the internal
+ numeric identifier of the Facebook profile.
+ This identifier can directly be used in a search query to the public Facebook
+ API.
+ Unfortunately Facebook has a limit of 600 requests per ten minutes for
+ non-paying customers.
+ This substantially reduces the speed at which downloading this information
+ is possible.
+\end_layout
+
 \begin_layout Subsubsection
 GitHub
 \end_layout
 
 \begin_layout Standard
-To not reinvent the wheel, we used the data available by GHTorrent 
+The links to GitHub users are easy to see in the 
+\begin_inset Quotes eld
+\end_inset
+
+About Me
+\begin_inset Quotes erd
+\end_inset
+
+ section on StackOverflow.
+ They also comply to a default format for the URL which allows for an easy
+ extraction of the GitHub username from the URL.
+ To not reinvent the wheel, we looked for other options to quickly gain
+ access to the user profiles on GitHub.
+ Luckily there is already a project specialised in this and with the help
+ of GHTorrent 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Gousi13"
 
 \end_inset
 
- which quickly gave us access to an offline copy of the GitHub data.
+ we quickly had access to an almost complete copy of all GitHub data.
  Since we would only focus on aspects of users, only that database was of
  interest to us.
 \end_layout
