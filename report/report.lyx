@@ -26,7 +26,7 @@
 \font_tt_scale 100
 \graphics default
 \default_output_format default
-\output_sync 0
+\output_sync 1
 \bibtex_command bibtex
 \index_command default
 \float_placement tbh
@@ -247,6 +247,16 @@ Methodology
 \end_layout
 
 \begin_layout Standard
+As we only received the StackOverflow database, one part of the research
+ was to find interesting aspects in this data ourselves.
+ 
+\end_layout
+
+\begin_layout Subsection
+Orientation
+\end_layout
+
+\begin_layout Standard
 During our initial research we started to look at what the StackOverflow
  data contains.
  We quickly noticed that many profiles were linked to a Facebook account.
@@ -295,6 +305,10 @@ algorithm
  the user stayed active, the amount of questions and answers posted, etc.
  Unfortunately it was impossible to find any indication that gender actually
  had any influence at all.
+\end_layout
+
+\begin_layout Subsection
+Re-orientation
 \end_layout
 
 \begin_layout Standard
@@ -363,6 +377,24 @@ Knowledge of natural languages
 Preferable working hours
 \end_layout
 
+\begin_layout Subsection
+Mining more data
+\end_layout
+
+\begin_layout Standard
+The StackOverflow database is available as a single download, but the data
+ from (most) other sources are not.
+ Getting access to this data was the next step.
+\end_layout
+
+\begin_layout Subsubsection
+Facebook
+\end_layout
+
+\begin_layout Subsubsection
+GitHub
+\end_layout
+
 \begin_layout Standard
 To not reinvent the wheel, we used the data available by GHTorrent 
 \begin_inset CommandInset citation
@@ -372,6 +404,20 @@ key "Gousi13"
 \end_inset
 
  which quickly gave us access to an offline copy of the GitHub data.
+ Since we would only focus on aspects of users, only that database was of
+ interest to us.
+\end_layout
+
+\begin_layout Subsubsection
+Twitter
+\end_layout
+
+\begin_layout Subsubsection
+LinkedIn
+\end_layout
+
+\begin_layout Subsubsection
+Google+
 \end_layout
 
 \begin_layout Section
