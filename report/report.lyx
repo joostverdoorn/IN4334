@@ -510,7 +510,14 @@ Storing the data
 The entire StackOverflow data dump has a size of just below 90 gigabytes.
  In addition to this we had to account for the size of all extra data we
  scraped.
- Since the goal was to create something that resembles a search engine to
+\end_layout
+
+\begin_layout Subsubsection
+Denormalisation
+\end_layout
+
+\begin_layout Standard
+Since the goal was to create something that resembles a search engine to
  find people within this data, the speed at which the data could be retrieved
  was of great importance.
  For example to get the tags, a set of keywords describing what a question
@@ -528,6 +535,32 @@ The entire StackOverflow data dump has a size of just below 90 gigabytes.
  than 38.000 tags at the time the data dump was created), a relational database
  with for example one column per tag would be a weird design.
  Finally, as database software, we picked the NoSQL database MongoDB.
+\end_layout
+
+\begin_layout Subsubsection
+Storage in MongoDB
+\end_layout
+
+\begin_layout Standard
+Within MongoDB a single collection with initially the StackOverflow users
+ was created.
+ This collection was then augmented to also hold information about the tags
+ a specific user ever used.
+ Internally these were stored as a list of tags, rather than a single continous
+ string, as StackOverflow does.
+\end_layout
+
+\begin_layout Standard
+Next to this augmented StackOverflow user collection, new collections were
+ made for the scraped data of the other online profile websites.
+\end_layout
+
+\begin_layout Subsubsection
+Linking the profiles
+\end_layout
+
+\begin_layout Standard
+TODO
 \end_layout
 
 \begin_layout Section
