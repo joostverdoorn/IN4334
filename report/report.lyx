@@ -480,27 +480,25 @@ key "Gousi13"
 \end_layout
 
 \begin_layout Subsubsection
+Twitter, LinkedIn, Google+
+\end_layout
+
+\begin_layout Standard
+Links to the three social network profile sites 
+\emph on
 Twitter
-\end_layout
-
-\begin_layout Standard
-TODO
-\end_layout
-
-\begin_layout Subsubsection
+\emph default
+, 
+\emph on
 LinkedIn
-\end_layout
-
-\begin_layout Standard
-TODO
-\end_layout
-
-\begin_layout Subsubsection
+\emph default
+ and 
+\emph on
 Google+
-\end_layout
-
-\begin_layout Standard
-TODO
+\emph default
+ were found just like the GitHub accounts, but for all three tools had to
+ be written to actually retrieve the data as there are no products like
+ GHTorrent that work with these sites.
 \end_layout
 
 \begin_layout Subsection
@@ -561,7 +559,57 @@ Linking the profiles
 \end_layout
 
 \begin_layout Standard
-TODO
+In the research of Vasilescu et al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "StackGitHub"
+
+\end_inset
+
+ methods are described to reliably create intersections between (specifically)
+ the StackOverflow data and the GitHub data.
+ Unfortunately they make use of the email address (and hashed versions of
+ the email address), which StackOverflow does not expose anymore since the
+ paper was published.
+ Therefore we had to fall back to other methods as described by Bird et
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bird:2006:MES:1137983.1138033"
+
+\end_inset
+
+ and Kouters et al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gnome"
+
+\end_inset
+
+.
+ The first one tries to match full names or email adresses shared by different
+ people in communities.
+ The second one uses Latent Semantic Analysis (LSA), an information retrieval
+ technique that works good with noisy data.
+ These approaches do suffer from false negatives and positives, though.
+ To prevent pollution by these false positives, we try to match users conservati
+vely by ignoring users with (English) dictionary words as username.
+\end_layout
+
+\begin_layout Standard
+In addtion to this matching by username we have more options to link users.
+ The location and full name data points are also good indicators about the
+ identity of a person.
+ Therefore we have chosen to try to find matches in profiles with these
+ three data points and assume a person on site A is the same as on site
+ B when two of these points match (eg.
+ full name and username).
+ There is of course still a slim chance that within the same city two people
+ have exactly the same name, but this is inevitable and should not occur
+ very often.
 \end_layout
 
 \begin_layout Subsection
