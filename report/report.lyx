@@ -178,10 +178,7 @@ target "xxx@xxx.xxx"
 
 \begin_layout Abstract
 This is the abstract text.
-\end_layout
-
-\begin_layout Keywords
-simplicity, beauty, elegance
+ TODO
 \end_layout
 
 \begin_layout Section
@@ -225,14 +222,16 @@ IEEEPARstart
 
  is the text text text text text text text text text text text text text
  text text text.
+ TODO
 \end_layout
 
 \begin_layout Section
-Previous Work
+Related Work
 \end_layout
 
 \begin_layout Standard
-text text text text text text text text text text text text text text text
+TODO: text text text text text text text text text text text text text text
+ text
 \end_layout
 
 \begin_layout Subsection
@@ -625,6 +624,10 @@ Results
 \end_layout
 
 \begin_layout Standard
+TODO
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement htbp
 wide false
@@ -743,7 +746,7 @@ Conclusions
 \end_layout
 
 \begin_layout Standard
-bla bla
+bla bla TODO
 \end_layout
 
 \begin_layout Appendices
@@ -757,25 +760,6 @@ Don't add text here!
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-First appendix
-\end_layout
-
-\begin_layout Standard
-Citation: 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "IEEEexample:beebe_archive"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Second appendix
 \end_layout
 
 \begin_layout Standard
