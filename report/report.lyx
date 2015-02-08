@@ -130,7 +130,7 @@ status open
 
 
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Jasper
@@ -153,7 +153,7 @@ type "mailto:"
 
 
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Joost
@@ -283,8 +283,21 @@ An alias/nickname, usually the same as on StackOverflow
 \end_layout
 
 \begin_layout Standard
-Unfortunately this was not very much and during our initial research we
- tried to detect patterns in the behaviour of men and women on StackOverflow.
+Facebook also sometimes gives information about the birthday, but almost
+ everyone has set their profile up in such a way that Facebook does not
+ expose this information to us.
+ Another data point we get is the locale the specific user is using the
+ website of Facebook.
+ This turned out to be quite useless, since specifically software developers
+ often have their locale on Facebook set to English (United States).
+ This makes it impossible to deduce the actual native language for these
+ people.
+\end_layout
+
+\begin_layout Standard
+The three useful data points are unfortunately not very much and during
+ our initial research we tried to detect patterns in the behaviour of men
+ and women on StackOverflow.
 \end_layout
 
 \begin_layout Standard
@@ -306,8 +319,218 @@ algorithm
 
  on the gender datapoint and several StackOverflow metrics, like the duration
  the user stayed active, the amount of questions and answers posted, etc.
- Unfortunately it was impossible to find any indication that gender actually
- had any influence at all.
+ Unfortunately it was impossible to apply these techniques to automatically
+ detect a gender.
+\end_layout
+
+\begin_layout Standard
+We did however find some statistics about ordinary users, users that linked
+ their account to Facebook, and differences in the gender.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/male_tags.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:male-tags"
+
+\end_inset
+
+Top 5 tag usage by randomly selected male users in the StackOverflow data
+ dump
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/female_tags.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:female-tags"
+
+\end_inset
+
+Top 5 tag usage by randomly selected male users in the StackOverflow data
+ dump
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:male-tags"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:female-tags"
+
+\end_inset
+
+ we can see the most favourite tags used by users that linked their account
+ to Facebook and thereby exposed their gender to us.
+ One interest immediately jumps out: Facebook users are very interested
+ in programming software that integrates with the Facebook API.
+ One notable difference is that male users are primarily interested in web
+ development, whereas female users apparently like to develop mobile application
+s.
+ We compared this to the all-time top 5 tags of StackOverflow which can
+ be seen in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:general-tags"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/general_tags.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:general-tags"
+
+\end_inset
+
+Top 5 tag usage by all users in the StackOverflow data dump
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can see here that Java is the most popular programming language (counted
+ by tag usage) on StackOverflow, but in most cases not in combination with
+ the Android-tag.
+ Also Facebook is completely missing from this list.
+\end_layout
+
+\begin_layout Standard
+In terms of duration of activity we found out that the average female user
+ stays active on StackOverflow (measured from registration date until last
+ login date) for about 
+\begin_inset Formula $70$
+\end_inset
+
+ days, whereas males stay active for about 
+\begin_inset Formula $115$
+\end_inset
+
+ days.
+ While females stay active for a shorter period of time, they do gain reputation
+ on StackOverflow a little bit faster though: 
+\begin_inset Formula $0.101$
+\end_inset
+
+ reputation per day for females against 
+\begin_inset Formula $0.078$
+\end_inset
+
+ reputation per day for males.
+\end_layout
+
+\begin_layout Standard
+As we could not find a way to automatically detect the gender of other users
+ without the specific link to Facebook, we could not see if this difference
+ in tags between males and females applies to all users, or is specific
+ to users that signed up to StackOverflow via Facebook.
 \end_layout
 
 \begin_layout Subsection
