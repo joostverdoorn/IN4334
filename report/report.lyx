@@ -183,7 +183,7 @@ We show that, using only open data, it is possible to construct detailed
  We cross-matched the user data provided by the StackOverflow data dump
  with other sources of user information, such as GitHub, Facebook, Twitter
  and LinkedIn.
- Recruites of companies can use these aggregated user profiles to quickly
+ Recruiters of companies can use these aggregated user profiles to quickly
  find qualified potential employees to fill open job listings.
 \end_layout
 
@@ -283,15 +283,15 @@ reference "sub:Linking-the-profiles"
 
  we will show how we combined this data to build complete profiles of the
  users.
- In section 
+ Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sub:Measuring-skill"
 
 \end_inset
 
- discuss what cues we can use to detect if a user is deemed skilled in a
- particular topic.
+ discusses what cues we can use to detect if a user is deemed skilled in
+ a particular topic.
  In section 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -501,7 +501,7 @@ Facebook also sometimes gives information about the birthday, but almost
  expose this information to us.
  Another data point we get is the locale the specific user is using the
  website of Facebook.
- We though that to be of little use to use, since specifically software
+ We thought that to be of little use to us, since specifically software
  developers often have their locale on Facebook set to English (United States).
  
 \end_layout
@@ -1101,8 +1101,8 @@ key "StackGitHub"
 
  methods are described to reliably create intersections between (specifically)
  the StackOverflow data and the GitHub data.
- Unfortunately for us, they make use of the email address (and md5 hashed
- versions of the email address), which StackOverflow does not expose anymore
+ Unfortunately for us, they make use of the email address (a Message Digest
+ 5 hash of the email address), which StackOverflow does not expose anymore
  since that paper was published.
  Therefore we had to fall back to other methods as described by Bird et
  al.
@@ -1231,15 +1231,15 @@ name "sub:Measuring-skill"
 \begin_layout Standard
 Now that we have all our data neatly indexed by elasticsearch, we can determine
  scoring functions to rank users according to their profiles.
- In 
+ Cappiluppi et al.
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Capiluppi2012"
 
 \end_inset
 
-, Cappiluppi et al.
- sate what aspects of social media may be important for assessing candidates,
+ state what aspects of social media may be important for assessing candidates,
  and what to avoid.
  We define 
 \begin_inset Quotes eld
@@ -1264,9 +1264,9 @@ Language proficiency
 \begin_layout Standard
 One obvious aspect of scoring candidates involves language proficiency.
  Although it's hard to automatically detect good code from bad code, a user's
- contribution to popular repositories that are written in a certain lanuage
+ contribution to popular repositories that are written in a certain language
  can be seen as an important cue for a user's proficiency in that language.
- Another important cue are post tags on StackOverflow.
+ Another important cue is the use of post tags on StackOverflow.
  These tags often describe the language the post is about, and be it a question
  or an answer, it hints at a knowledge of that language.
 \end_layout
@@ -1562,7 +1562,7 @@ The availability of the StackOverflow data via their official data dumps
  profiles as they are now and there is no way to know when this data is
  outdated again.
  Twitter, LinkedIn and Google+ also have limits to their API, although higher
- than Facebook, but they allow for a more requests per second.
+ than Facebook, but they allow for more requests per second.
  Again, for these sites we have no ability to know when a profile was updated
  which makes keeping our data set up to date infeasible, as we would have
  to request all profiles repeatedly over time.
