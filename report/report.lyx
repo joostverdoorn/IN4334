@@ -363,24 +363,7 @@ key "Capiluppi2012"
 \end_layout
 
 \begin_layout Section
-Methodology
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Methodology"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-As we only received the StackOverflow database, one part of the research
- was to find interesting aspects in this data ourselves.
- 
-\end_layout
-
-\begin_layout Subsection
-Orientation
+Earlier Research
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Orientation"
@@ -393,7 +376,106 @@ name "sub:Orientation"
 \begin_layout Standard
 During our initial research we started to look at what the StackOverflow
  data contains.
- We quickly noticed that many profiles were linked to a Facebook account.
+ We quickly noticed that many profiles pulled their avatar images from Facebook,
+ as seen in Figure
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:facebook_id_stackoverflow"
+
+\end_inset
+
+.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/facebook_profile_in_data.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:facebook_id_stackoverflow"
+
+\end_inset
+
+About 250000 StackOverflow users have their avatar images pulled from Facebook.
+ The red number is a unique identifier for that user.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ As many other social media platforms, Facebook provides a public API that
+ allows developers to interact with their services.
+ An example of the data returned by Facebook is show in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:facebook_api_profie"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/facebook_profile_from_api.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:facebook_api_profie"
+
+\end_inset
+
+The profile returned by the Facebook API for the user of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:facebook_id_stackoverflow"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
  This immediately gave us the idea to look into those links to Facebook,
  as StackOverflow profiles are usually very unpersonal and Facebook possibly
  gives more insight in the type of users that are active on StackOverflow.
@@ -410,7 +492,7 @@ The gender
 \end_layout
 
 \begin_layout Itemize
-An alias/nickname, usually the same as on StackOverflow
+An alias/nickname, often the same as on StackOverflow
 \end_layout
 
 \begin_layout Standard
@@ -419,10 +501,9 @@ Facebook also sometimes gives information about the birthday, but almost
  expose this information to us.
  Another data point we get is the locale the specific user is using the
  website of Facebook.
- This turned out to be quite useless, since specifically software developers
- often have their locale on Facebook set to English (United States).
- This makes it impossible to deduce the actual native language for these
- people.
+ We though that to be of little use to use, since specifically software
+ developers often have their locale on Facebook set to English (United States).
+ 
 \end_layout
 
 \begin_layout Standard
@@ -463,7 +544,7 @@ We did however find some statistics about ordinary users, users that linked
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -495,10 +576,6 @@ Top 5 tag usage by randomly selected male users in the StackOverflow data
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -508,7 +585,7 @@ Top 5 tag usage by randomly selected male users in the StackOverflow data
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -537,10 +614,6 @@ Top 5 tag usage by randomly selected male users in the StackOverflow data
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -586,7 +659,7 @@ reference "fig:general-tags"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -614,10 +687,6 @@ Top 5 tag usage by all users in the StackOverflow data dump
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -664,16 +733,16 @@ As we could not find a way to automatically detect the gender of other users
  to users that signed up to StackOverflow via Facebook.
 \end_layout
 
-\begin_layout Subsection
-Re-orientation
+\begin_layout Section
+Research Goal
 \end_layout
 
 \begin_layout Standard
-After this failed attempt we went one step backwards to find a new angle
- to approach this data.
- Since we already downloaded many Facebook user profiles, we went further
- into that direction and started to look for other online profiles that
- give more insight into a user.
+After the previous fruitless attempt we went one step backwards to find
+ a new angle to approach this data.
+ Since we already requested and linked about 40000 Facebook user profiles,
+ we went further into that direction and started to look for other online
+ profiles that give more insight into a user.
  Via the 
 \begin_inset Quotes eld
 \end_inset
@@ -682,7 +751,15 @@ About Me
 \begin_inset Quotes erd
 \end_inset
 
- section of the StackOverflow profiles we could deduce many profiles from
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+WebsiteUrl
+\begin_inset Quotes erd
+\end_inset
+
+ entries in the StackOverflow profiles we could deduce many profiles from
  sites like 
 \emph on
 Google
@@ -700,22 +777,61 @@ LinkedIn
 GitHub
 \emph default
 .
- All these sites give at least the name of the user and possibly hold a
- different online alias or user name for that person.
- This online alias helps to link to profiles on other sites that the user
- on StackOverflow did not explicitly specified.
+ See Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:github_in_so_profile"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-Another data point many sites have is the location of the user.
- Together with an online service to convert this to coordinates on the globe
- (we used Microsoft Bing for this due to the high request limit they offer)
- insights can be gained about the specific location of the user, assuming
- this was entered correctly.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/github_in_website_url.png
+	width 100col%
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Standard
-Other data points these sites offer include:
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:github_in_so_profile"
+
+\end_inset
+
+A user that has linked his or her GitHub account in the WebsiteUrl field
+ of the StackOverflow profile.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+We saw the potential wealth of information we would have if we were able
+ to link all that data together.
+ Other data points these sites offer include:
 \end_layout
 
 \begin_layout Itemize
@@ -750,10 +866,6 @@ Knowledge of natural languages
 Preferable working hours
 \end_layout
 
-\begin_layout Subsection
-Goal
-\end_layout
-
 \begin_layout Standard
 With this data potentially at our fingertips we had to think about what
  this could be used for.
@@ -766,28 +878,99 @@ With this data potentially at our fingertips we had to think about what
  for a company to quickly find people who would be suitable for a specific
  job.
  Of course this cannot, at this moment, replace all other forms of recruitment,
- because not every smart person is active on any of those profile websites
- or they made it very hard to construct this complete identity.
+ because not nearly every qualified person is active on any of those profile
+ websites or they made it very hard to construct this complete identity.
  Furthermore this is only applicable to software development as there are
  no vast online communities for other markets, comparable to what StackOverflow
  is for software development.
+ Still, a lot of insight could be gained by recruiters and researchers alike
+ if all this data were linked together.
+ 
+\series bold
+TODO: Maybe formulate some research questions?
+\end_layout
+
+\begin_layout Section
+Methodology
 \end_layout
 
 \begin_layout Subsection
-Mining more data
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Mining-more-data"
-
-\end_inset
-
-
+Storing the data
 \end_layout
 
 \begin_layout Standard
-The StackOverflow database is available as a single download, but the data
- from (most) other sources are not.
- Getting access to this data was the next step.
+The entire StackOverflow data dump has a size of just below 90 gigabytes.
+ In addition to this we had to account for the size of all extra data we
+ scraped.
+\end_layout
+
+\begin_layout Subsubsection
+Storage in MongoDB
+\end_layout
+
+\begin_layout Standard
+Within MongoDB a single collection with initially the StackOverflow users
+ was created.
+ This collection was then augmented to also hold information about the tags
+ a specific user ever used.
+ Internally these were stored as a list of tags, rather than a single continuous
+ string, as StackOverflow does.
+\end_layout
+
+\begin_layout Standard
+Next to this augmented StackOverflow user collection, new collections were
+ made for the scraped data of the other online profile websites.
+ 
+\series bold
+TODO: This was switched with Denormalisation as mongodb is really the reaon
+ the data had to be denormalized.
+ Check if the order is still okay.
+\end_layout
+
+\begin_layout Subsubsection
+Denormalisation
+\end_layout
+
+\begin_layout Standard
+Since the goal was to create something that resembles a search engine to
+ find people within this data, the speed at which the data could be retrieved
+ was of great importance.
+ For example to get the tags, a set of keywords describing what a question
+ is about on StackOverflow, a user ever used, in the original StackOverflow
+ data dump one would have to get the user identification, the look all questions
+ posted by this user up, and then iterate over all these questions and parse
+ the tags, which are stored as a continuous string within the StackOverflow
+ data dump.
+ This can be very time and/or resource consuming with databases of this
+ size.
+ To prevent this, the decision was made to denormalize the entire StackOverflow
+ data dump and store essential information we needed directly within the
+ object of a user.
+ Since not everyone would ever use the same tags (StackOverflow had more
+ than 38.000 tags at the time the data dump was created), a relational database
+ with for example one column per tag would be a weird design.
+ Finally, as database software, we picked the NoSQL database MongoDB.
+\end_layout
+
+\begin_layout Subsection
+Exploiting direct links
+\end_layout
+
+\begin_layout Standard
+As mentioned earlier, a lot of users have manually linked their profiles
+ together, usually in the 
+\begin_inset Quotes eld
+\end_inset
+
+AboutMe
+\begin_inset Quotes erd
+\end_inset
+
+ section of the StackOverflow data.
+ Links found here were easily exploited: we could simply use a regex to
+ retrieve the unique identifiers present in the URLs, and use these identifiers
+ to retrieve the data from public APIs.
+ 
 \end_layout
 
 \begin_layout Subsubsection
@@ -877,71 +1060,22 @@ Google+
 \end_layout
 
 \begin_layout Subsection
-Storing the data
-\end_layout
-
-\begin_layout Standard
-The entire StackOverflow data dump has a size of just below 90 gigabytes.
- In addition to this we had to account for the size of all extra data we
- scraped.
+Linking more data
 \end_layout
 
 \begin_layout Subsubsection
-Denormalisation
+Name and location based matching
 \end_layout
 
 \begin_layout Standard
-Since the goal was to create something that resembles a search engine to
- find people within this data, the speed at which the data could be retrieved
- was of great importance.
- For example to get the tags, a set of keywords describing what a question
- is about on StackOverflow, a user ever used, in the original StackOverflow
- data dump one would have to get the user identification, the look all questions
- posted by this user up, and then iterate over all these questions and parse
- the tags, which are stored as a continuous string within the StackOverflow
- data dump.
- This can be very time and/or resource consuming with databases of this
- size.
- To prevent this, the decision was made to denormalize the entire StackOverflow
- data dump and store essential information we needed directly within the
- object of a user.
- Since not everyone would ever use the same tags (StackOverflow had more
- than 38.000 tags at the time the data dump was created), a relational database
- with for example one column per tag would be a weird design.
- Finally, as database software, we picked the NoSQL database MongoDB.
-\end_layout
-
-\begin_layout Subsubsection
-Storage in MongoDB
-\end_layout
-
-\begin_layout Standard
-Within MongoDB a single collection with initially the StackOverflow users
- was created.
- This collection was then augmented to also hold information about the tags
- a specific user ever used.
- Internally these were stored as a list of tags, rather than a single continuous
- string, as StackOverflow does.
-\end_layout
-
-\begin_layout Standard
-Next to this augmented StackOverflow user collection, new collections were
- made for the scraped data of the other online profile websites.
-\end_layout
-
-\begin_layout Subsubsection
-Linking the profiles
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Linking-the-profiles"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-In the research of Vasilescu et al.
+Although we now had a decent amount of linked profiles from multiple platforms,
+ most users did not have any manually linked profiles, aside from the Facebook
+ profile images.
+ We suspect that most users link their Facebook profile image unknowingly,
+ because the number of linked profile images (about 250000) is substantially
+ larger than any other linked information.
+ We decided to attempt to link more data in other ways.
+ In the research of Vasilescu et al.
  
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -951,9 +1085,9 @@ key "StackGitHub"
 
  methods are described to reliably create intersections between (specifically)
  the StackOverflow data and the GitHub data.
- Unfortunately they make use of the email address (and hashed versions of
- the email address), which StackOverflow does not expose anymore since the
- paper was published.
+ Unfortunately for us, they make use of the email address (and md5 hashed
+ versions of the email address), which StackOverflow does not expose anymore
+ since that paper was published.
  Therefore we had to fall back to other methods as described by Bird et
  al.
  
@@ -977,36 +1111,59 @@ key "Gnome"
  The second one uses Latent Semantic Analysis (LSA), an information retrieval
  technique that works good with noisy data.
  These approaches do suffer from false negatives and positives, though.
- To prevent pollution by these false positives, we try to match users conservati
-vely by ignoring users with (English) dictionary words as user name.
+ 
 \end_layout
 
 \begin_layout Standard
-In addition to this matching by user name we have more options to link users.
- The location and full name data points are also good indicators about the
- identity of a person.
+However, we found there are more ways to reliably link profiles.
+ Apart from the username (stored as 
+\begin_inset Quotes eld
+\end_inset
+
+DisplayName
+\begin_inset Quotes erd
+\end_inset
+
+ in the StackOverflow data dump), a lot of records also contain a 
+\begin_inset Quotes eld
+\end_inset
+
+Location
+\begin_inset Quotes erd
+\end_inset
+
+ field.
+ We also had access to a lot of real names provided by the Facebook profiles.
+ Although matching on only the username or full name may result in a lot
+ of false positive matches, as multiple users might use the same username
+ on different platforms, and real names aren't globally unique either, a
+ small qualitative research showed that when we combined the username, real
+ name and location fields, we would get virtually no false positive matches
+ when cross-linking the profiles with the GHTorrent data dump.
  Therefore we have chosen to try to find matches in profiles with these
- three data points and assume a person on site A is the same as on site
- B when two of these points match (eg.
- full name and user name).
+ three data points and assume a profile on StackOverflow belongs to the
+ same person as a profile on GitHub when two of these points match (eg.
+ full name and username, or username and location).
  There is of course still a slim chance that within the same city two people
  have exactly the same name, but this is inevitable and should not occur
  very often.
+ In this manner, we found about 4000 additional links between StackOverflow
+ and GitHub.
 \end_layout
 
-\begin_layout Subsection
-Measuring skill
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Measuring-skill"
-
-\end_inset
-
-
+\begin_layout Subsubsection
+Mining coordinates
 \end_layout
 
 \begin_layout Standard
-TODO
+Another data point many sites have is the location of the user.
+ Together with an online service to convert this to coordinates on the globe
+ (we used Microsoft Bing for this due to the high request limit they offer)
+ insights can be gained about the specific location of the user, assuming
+ this was entered correctly.
+ 
+\series bold
+TODO: More on this and why it is useful
 \end_layout
 
 \begin_layout Subsection
@@ -1031,6 +1188,35 @@ To be able to search, score and rank our data, the open source search engine
  Using the MongoDB River extension for elasticsearch we were able to have
  the elasticsearch index update whenever the data in MongoDB was changed.
  
+\end_layout
+
+\begin_layout Standard
+We also fed the GHTorrent data into ElasticSearch, which allowed us to attempt
+ to link users in a more dynamic fashion.
+ In a short qualitative research fase, we defined a set of fuzzy search
+ queries by which we should deduct that two profiles from different websites
+ are the same, be it they pass a certain score.
+ 
+\series bold
+TODO: Explain that elasticsearch didnt add any real benefit.
+\end_layout
+
+\begin_layout Section
+Scoring and ranking
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Measuring-skill"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now that we have our data in ElasticSearch, we can determine scoring functions
+ to rank users 
+\series bold
+TODO: more on scoring functions
 \end_layout
 
 \begin_layout Section
