@@ -212,13 +212,53 @@ inding
  qualified potential employees is big bussiness in the IT sector.
  As the sector grows, the scarcity of skilled workers means that more and
  more resources are spent finding the right people for the job.
+ We see signs of this everywhere: from the employee poaching practices now
+ commonplace in Silicon Valley
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+http://www.forbes.com/sites/billsinger/2012/11/19/after-apple-google-adobe-pixar-g
+oogle-and-intuit-antitrust-employment-charges-hit-ebay/
+\end_layout
+
+\end_inset
+
+, to graduates of Computer Science and Computer Engineering being amonst
+ the highest paid starting salaries
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+http://www.forbes.com/sites/susanadams/2013/09/20/the-college-degrees-with-the-hig
+hest-starting-salaries/
+\end_layout
+
+\end_inset
+
+.
  At the same time, an all-time high number of developers participate in
- what has become known as social coding: they start open-source projects,
- discuss code and help each other online.
+ what has become known as social coding: they start and contribute to open-sourc
+e projects, discuss and review eachother's code and help each other online.
  Popular forums of these interactions, such as StackOverflow, GitHub and
- Twitter, have APIs available that can be used to retrieving this data for
- analysis.
- 
+ Twitter, publish some of this data.
+ StackOverflow, a popular Questions & Answers website for programming-related
+ questions, provides regular data dumps of the online interactions that
+ occur on the website.
+ Other websites have public APIs available that can be used to retrieve
+ most if not all of the user's public data.
+ All this data provides a wealth of information about the users, but has
+ to be combined to reach its full potential.
+ In section XX we will discuss related work.
+ In section XX we will discuss what data we retrieved, and in what manner.
+ In section XX we will show how we combined this data to build complete
+ profiles of the users.
+ In section XX discuss what cues we can use to detect if a user is deemed
+ skilled in a particular topic.
+ In section XX we will show how we fed the data into the ElasticSearch search
+ engine to score and rank the assembled profiles.
+ Ultimately, we will discuss how our research can be used in practice, and
+ suggest further research.
 \end_layout
 
 \begin_layout Section
@@ -226,8 +266,25 @@ Related Work
 \end_layout
 
 \begin_layout Standard
-TODO: text text text text text text text text text text text text text text
- text
+In 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "StackGitHub"
+
+\end_inset
+
+, Bogdan Vasilescu et al.
+ use the StackOverflow data dump, and a similar data dump of GitHub (GHTorrent)
+ to research behavioural patterns of users who use both platforms.
+ They discuss how they linked the profiles from both websites, and how they
+ use the combined data to show how interaction on one website influences
+ or is influenced by interaction on the other.
+ They find that people who commit more often on GitHub are more active answerers
+ on StackOverflow.
+ They also find that asking a question on StackOverflow often catalyzes
+ commiting on GitHub, suggesting that answers provided helped the user in
+ finishing the commit.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -864,10 +921,6 @@ To be able to search, score and rank our data, the open source search engine
  Using the MongoDB River extension for ElasticSearch we were able to have
  the ElasticSearch index update whenever the data in MongoDB was changed.
  
-\end_layout
-
-\begin_layout Standard
-
 \end_layout
 
 \begin_layout Section
