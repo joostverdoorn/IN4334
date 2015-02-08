@@ -966,10 +966,18 @@ AboutMe
 \begin_inset Quotes erd
 \end_inset
 
- section of the StackOverflow data.
- Links found here were easily exploited: we could simply use a regex to
- retrieve the unique identifiers present in the URLs, and use these identifiers
- to retrieve the data from public APIs.
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+WebsiteUrl
+\begin_inset Quotes erd
+\end_inset
+
+ entries of the StackOverflow data.
+ Links found here were easily exploited: we wrote several simple regular
+ expression to retrieve the unique identifiers present in the URLs, and
+ used these identifiers to retrieve the data from public APIs.
  
 \end_layout
 
@@ -978,8 +986,8 @@ Facebook
 \end_layout
 
 \begin_layout Standard
-Most Facebook profiles from the StackOverflow data dump come from the avatar,
- an image identifying a user on a website, of a user profile.
+Most Facebook profile links from the StackOverflow data dump come from the
+ avatars, an image identifying a user on a website, of a user profile.
  Since all accounts linked to Facebook automatically get their Facebook
  profile picture set as avatar on StackOverflow, these URLs are easy to
  spot.
@@ -1004,6 +1012,12 @@ reference "sub:Orientation"
 , Facebook hardly gives away any information to non-paying customers, whereas
  the other services are more willingly to disclose private information of
  their users.
+ Also, we mentioned in that section that we didn't have any use for the
+ language setting of the user.
+ That is no longer the case: although the locale is often set to the default,
+ American English, it can be another hint of the user's location if it is
+ set to a non-default value.
+ 
 \end_layout
 
 \begin_layout Subsubsection
@@ -1033,8 +1047,10 @@ key "Gousi13"
 \end_inset
 
  we quickly had access to an almost complete copy of all GitHub data.
- Since we would only focus on aspects of users, only that database was of
- interest to us.
+ Since initially we would only focus on aspects of users, only that database
+ was of interest to us.
+ Later we used the GitHub API to retrieve repositories users contributed
+ to 
 \end_layout
 
 \begin_layout Subsubsection
@@ -1178,7 +1194,7 @@ name "sub:elasticsearch"
 \end_layout
 
 \begin_layout Standard
-To be able to search, score and rank our data, the open source search engine
+To be able to search, score and rank our data, the open-source search engine
  elasticsearch was used.
  The usage of elasticsearch has several benefits: although it is possible
  to use MongoDB's MapReduce queries for searching and scoring the data,
@@ -1213,10 +1229,111 @@ name "sub:Measuring-skill"
 \end_layout
 
 \begin_layout Standard
-Now that we have our data in ElasticSearch, we can determine scoring functions
- to rank users 
-\series bold
-TODO: more on scoring functions
+Now that we have all our data neatly indexed by elasticsearch, we can determine
+ scoring functions to rank users according to their profiles.
+ In 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Capiluppi2012"
+
+\end_inset
+
+, Cappiluppi et al.
+ sate what aspects of social media may be important for assessing candidates,
+ and what to avoid.
+ We define 
+\begin_inset Quotes eld
+\end_inset
+
+cues
+\begin_inset Quotes erd
+\end_inset
+
+ as a hints of a certain desirable trait in candidates, which in themselves
+ may not mean a lot but when put together will build a pretty complete image
+ of the user.
+ We identify a number cues for a number of sought-after attributes in candidates
+, and how they may be retrieved from the data.
+ It is then up to a recruiter to determine how important each aspect is.
+\end_layout
+
+\begin_layout Subsection
+Language proficiency
+\end_layout
+
+\begin_layout Standard
+One obvious aspect of scoring candidates involves language proficiency.
+ Although it's hard to automatically detect good code from bad code, a user's
+ contribution to popular repositories that are written in a certain lanuage
+ can be seen as an important cue for a user's proficiency in that language.
+ Another important cue are post tags on StackOverflow.
+ These tags often describe the language the post is about, and be it a question
+ or an answer, it hints at a knowledge of that language.
+\end_layout
+
+\begin_layout Subsection
+Framework knowledge
+\end_layout
+
+\begin_layout Subsection
+Location
+\end_layout
+
+\begin_layout Standard
+Another obvious selection metric is the location of a user.
+ As we can pull in coordinates of the users, we can actually define the
+ radius in which the candidate must live in order to be eligible.
+ However, most users do not have a location set in one of their profiles.
+ Twitter, however, often includes a geographical locations in its tweets
+ which we can use.
+ For non-US locations, we can also use the language data retrieved from
+ Facebook as a hint a user might be in a certain geographical area.
+\end_layout
+
+\begin_layout Subsection
+Helpfulness
+\end_layout
+
+\begin_layout Standard
+Helpfulness is an obvious plus in candidates, and cues for a candidate's
+ helpfulness can be retrieved directly from StackOverflow.
+ A helpful person will answer a relatively high amount of questions.
+\end_layout
+
+\begin_layout Subsection
+Team player
+\end_layout
+
+\begin_layout Standard
+A team player contributes 
+\end_layout
+
+\begin_layout Subsection
+Community builder
+\end_layout
+
+\begin_layout Standard
+A community builder can be found 
+\end_layout
+
+\begin_layout Subsection
+All star
+\end_layout
+
+\begin_layout Subsection
+Technology enthousiast
+\end_layout
+
+\begin_layout Standard
+It is often found important that developers keep themselves up-to-date with
+ the latest and greatest technology, and gets enthoused about it.
+ Cues for this can be found on the more social platforms, such as Twitter
+ and Google+.
+ We can score users based upon who they follow on Twitter, or what communities
+ they're part of on Google+, although identifying the right people to follow
+ and communities to be a part of deserves a study of it's own.
+ One way to identify them is finding common patterns in the Twitter and
+ Google+ behaviours of developers.
 \end_layout
 
 \begin_layout Section
