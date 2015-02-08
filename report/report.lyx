@@ -179,11 +179,12 @@ type "mailto:"
 
 \begin_layout Abstract
 We show that, using only open data, it is possible to construct detailed
- profiles StackOverflow users.
+ user profiles of active StackOverflow users.
  We cross-matched the user data provided by the StackOverflow data dump
- with other sources of user information, such as GitHub, Facebook and Twitter.
- ...
- MORE TODO
+ with other sources of user information, such as GitHub, Facebook, Twitter
+ and LinkedIn.
+ Recruites of companies can use these aggregated user profiles to quickly
+ find qualified potential employees to fill open job listings.
 \end_layout
 
 \begin_layout Section
@@ -249,20 +250,70 @@ e projects, discuss and review each others code and help each other online.
  most if not all of the user's public data.
  All this data provides a wealth of information about the users, but has
  to be combined to reach its full potential.
- In section XX we will discuss related work.
- In section XX we will discuss what data we retrieved, and in what manner.
- In section XX we will show how we combined this data to build complete
- profiles of the users.
+ In section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Related-Work"
+
+\end_inset
+
+ we will discuss related work.
+ Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Methodology"
+
+\end_inset
+
+ explains what our goal of this research is.
+ In section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Mining-more-data"
+
+\end_inset
+
+ we will discuss what data we retrieved, and in what manner.
+ In section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Linking-the-profiles"
+
+\end_inset
+
+ we will show how we combined this data to build complete profiles of the
+ users.
  In section XX discuss what cues we can use to detect if a user is deemed
  skilled in a particular topic.
- In section XX we will show how we fed the data into the elasticsearch search
- engine to score and rank the assembled profiles.
- Ultimately, we will discuss how our research can be used in practice, and
- suggest further research.
+ In section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:elasticsearch"
+
+\end_inset
+
+ we will show how we fed the data into the elasticsearch search engine to
+ score and rank the assembled profiles.
+ Ultimately, in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Discussion"
+
+\end_inset
+
+, we will discuss how our research can be used in practice, and suggest
+ further research.
 \end_layout
 
 \begin_layout Section
 Related Work
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Related-Work"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -297,6 +348,13 @@ another subsection
 
 \begin_layout Section
 Methodology
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Methodology"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -701,6 +759,13 @@ With this data potentially at our fingertips we had to think about what
 
 \begin_layout Subsection
 Mining more data
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Mining-more-data"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -850,6 +915,13 @@ Next to this augmented StackOverflow user collection, new collections were
 
 \begin_layout Subsubsection
 Linking the profiles
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Linking-the-profiles"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -908,6 +980,13 @@ In addition to this matching by user name we have more options to link users.
 
 \begin_layout Subsection
 Searching within the data
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:elasticsearch"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1047,6 +1126,13 @@ table
 
 \begin_layout Section
 Discussion
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Discussion"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
