@@ -1177,9 +1177,15 @@ Another data point many sites have is the location of the user.
  (we used Microsoft Bing for this due to the high request limit they offer)
  insights can be gained about the specific location of the user, assuming
  this was entered correctly.
- 
-\series bold
-TODO: More on this and why it is useful
+ Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Location"
+
+\end_inset
+
+ will explain in more detail why having this location is a useful metric
+ in our search engine.
 \end_layout
 
 \begin_layout Subsection
@@ -1286,6 +1292,13 @@ Recruiters also often look for experience in popular frameworks.
 
 \begin_layout Subsection
 Location
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Location"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
