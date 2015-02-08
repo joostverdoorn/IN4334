@@ -180,8 +180,8 @@ type "mailto:"
 \begin_layout Abstract
 We show that, using only open data, it is possible to construct detailed
  profiles StackOverflow users.
- We crossmatched the user data provided by the StackOverflow data dump with
- other sources of user information, such as GitHub, Facebook and Twitter.
+ We cross-matched the user data provided by the StackOverflow data dump
+ with other sources of user information, such as GitHub, Facebook and Twitter.
  ...
  MORE TODO
 \end_layout
@@ -209,7 +209,7 @@ inding
 
 \end_inset
 
- qualified potential employees is big bussiness in the IT sector.
+ qualified potential employees is big business in the IT sector.
  As the sector grows, the scarcity of skilled workers means that more and
  more resources are spent finding the right people for the job.
  We see signs of this everywhere: from the employee poaching practices now
@@ -224,7 +224,7 @@ oogle-and-intuit-antitrust-employment-charges-hit-ebay/
 
 \end_inset
 
-, to graduates of Computer Science and Computer Engineering being amonst
+, to graduates of Computer Science and Computer Engineering being amongst
  the highest paid starting salaries
 \begin_inset Foot
 status collapsed
@@ -239,7 +239,7 @@ hest-starting-salaries/
 .
  At the same time, an all-time high number of developers participate in
  what has become known as social coding: they start and contribute to open-sourc
-e projects, discuss and review eachother's code and help each other online.
+e projects, discuss and review each others code and help each other online.
  Popular forums of these interactions, such as StackOverflow, GitHub and
  Twitter, publish some of this data.
  StackOverflow, a popular Questions & Answers website for programming-related
@@ -255,7 +255,7 @@ e projects, discuss and review eachother's code and help each other online.
  profiles of the users.
  In section XX discuss what cues we can use to detect if a user is deemed
  skilled in a particular topic.
- In section XX we will show how we fed the data into the ElasticSearch search
+ In section XX we will show how we fed the data into the elasticsearch search
  engine to score and rank the assembled profiles.
  Ultimately, we will discuss how our research can be used in practice, and
  suggest further research.
@@ -275,15 +275,15 @@ key "StackGitHub"
 
 , Bogdan Vasilescu et al.
  use the StackOverflow data dump, and a similar data dump of GitHub (GHTorrent)
- to research behavioural patterns of users who use both platforms.
+ to research behavioral patterns of users who use both platforms.
  They discuss how they linked the profiles from both websites, and how they
  use the combined data to show how interaction on one website influences
  or is influenced by interaction on the other.
  They find that people who commit more often on GitHub are more active answerers
  on StackOverflow.
  They also find that asking a question on StackOverflow often catalyzes
- commiting on GitHub, suggesting that answers provided helped the user in
- finishing the commit.
+ committing on GitHub, suggesting that answers provided helped the user
+ in finishing the commit.
  
 \end_layout
 
@@ -353,7 +353,7 @@ Facebook also sometimes gives information about the birthday, but almost
 
 \begin_layout Standard
 The three useful data points are unfortunately not very much and during
- our initial research we tried to detect patterns in the behaviour of men
+ our initial research we tried to detect patterns in the behavior of men
  and women on StackOverflow.
 \end_layout
 
@@ -374,7 +374,7 @@ algorithm
 \begin_inset Quotes erd
 \end_inset
 
- on the gender datapoint and several StackOverflow metrics, like the duration
+ on the gender data point and several StackOverflow metrics, like the duration
  the user stayed active, the amount of questions and answers posted, etc.
  Unfortunately it was impossible to apply these techniques to automatically
  detect a gender.
@@ -490,7 +490,7 @@ reference "fig:female-tags"
 
 \end_inset
 
- we can see the most favourite tags used by users that linked their account
+ we can see the most favorite tags used by users that linked their account
  to Facebook and thereby exposed their gender to us.
  One interest immediately jumps out: Facebook users are very interested
  in programming software that integrates with the Facebook API.
@@ -627,7 +627,7 @@ GitHub
 \emph default
 .
  All these sites give at least the name of the user and possibly hold a
- different online alias or username for that person.
+ different online alias or user name for that person.
  This online alias helps to link to profiles on other sites that the user
  on StackOverflow did not explicitly specified.
 \end_layout
@@ -717,10 +717,10 @@ Facebook
 Most Facebook profiles from the StackOverflow data dump come from the avatar,
  an image identifying a user on a website, of a user profile.
  Since all accounts linked to Facebook automatically get their Facebook
- profile picture set as avatar on StackOverflow, these URL's are easy to
+ profile picture set as avatar on StackOverflow, these URLs are easy to
  spot.
- These URL's are also in a standardized format and contain the internal
- numeric identifier of the Facebook profile.
+ These URLs are also in a standardized format and contain the internal numeric
+ identifier of the Facebook profile.
  This identifier can directly be used in a search query to the public Facebook
  API.
  Unfortunately Facebook has a limit of 600 requests per ten minutes for
@@ -757,10 +757,10 @@ About Me
 
  section on StackOverflow.
  They also comply to a default format for the URL which allows for an easy
- extraction of the GitHub username from the URL.
+ extraction of the GitHub user name from the URL.
  To not reinvent the wheel, we looked for other options to quickly gain
  access to the user profiles on GitHub.
- Luckily there is already a project specialised in this and with the help
+ Luckily there is already a project specialized in this and with the help
  of GHTorrent 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -817,7 +817,7 @@ Since the goal was to create something that resembles a search engine to
  is about on StackOverflow, a user ever used, in the original StackOverflow
  data dump one would have to get the user identification, the look all questions
  posted by this user up, and then iterate over all these questions and parse
- the tags, which are stored as a continous string within the StackOverflow
+ the tags, which are stored as a continuous string within the StackOverflow
  data dump.
  This can be very time and/or resource consuming with databases of this
  size.
@@ -839,7 +839,7 @@ Within MongoDB a single collection with initially the StackOverflow users
  was created.
  This collection was then augmented to also hold information about the tags
  a specific user ever used.
- Internally these were stored as a list of tags, rather than a single continous
+ Internally these were stored as a list of tags, rather than a single continuous
  string, as StackOverflow does.
 \end_layout
 
@@ -884,23 +884,23 @@ key "Gnome"
 \end_inset
 
 .
- The first one tries to match full names or email adresses shared by different
+ The first one tries to match full names or email addresses shared by different
  people in communities.
  The second one uses Latent Semantic Analysis (LSA), an information retrieval
  technique that works good with noisy data.
  These approaches do suffer from false negatives and positives, though.
  To prevent pollution by these false positives, we try to match users conservati
-vely by ignoring users with (English) dictionary words as username.
+vely by ignoring users with (English) dictionary words as user name.
 \end_layout
 
 \begin_layout Standard
-In addtion to this matching by username we have more options to link users.
+In addition to this matching by user name we have more options to link users.
  The location and full name data points are also good indicators about the
  identity of a person.
  Therefore we have chosen to try to find matches in profiles with these
  three data points and assume a person on site A is the same as on site
  B when two of these points match (eg.
- full name and username).
+ full name and user name).
  There is of course still a slim chance that within the same city two people
  have exactly the same name, but this is inevitable and should not occur
  very often.
@@ -912,14 +912,14 @@ Searching within the data
 
 \begin_layout Standard
 To be able to search, score and rank our data, the open source search engine
- ElasticSearch was used.
- The usage of ElasticSearch has several benefits: although it is possible
+ elasticsearch was used.
+ The usage of elasticsearch has several benefits: although it is possible
  to use MongoDB's MapReduce queries for searching and scoring the data,
- ElasticSearch was built for this purpose.
- Besides that, ElasticSearch is great at fuzzy searches, which makes it
+ elasticsearch was built for this purpose.
+ Besides that, elasticsearch is great at fuzzy searches, which makes it
  easier to approximately match strings representing languages and technologies.
- Using the MongoDB River extension for ElasticSearch we were able to have
- the ElasticSearch index update whenever the data in MongoDB was changed.
+ Using the MongoDB River extension for elasticsearch we were able to have
+ the elasticsearch index update whenever the data in MongoDB was changed.
  
 \end_layout
 
@@ -1080,7 +1080,7 @@ The availability of the StackOverflow data via their official data dumps
  Luckily for GitHub we have access to the third-party project GHTorrent,
  but for other sites projects like this do not exist at this moment.
  Some of them, especially Facebook, even have very hard restrictions to
- how many requests to their API can be made per given timeframe.
+ how many requests to their API can be made per given time frame.
  For example for Facebook it would take several days just to retrieve all
  profiles as they are now and there is no way to know when this data is
  outdated again.
@@ -1117,7 +1117,7 @@ Another aspect that would need attention is the speed at which search queries
  This is information elasticsearch does not have indexed as of this moment
  in our implementation.
  In practice elasticsearch is only really fast when used with filtering
- and facetted search.
+ and faceted search.
 \end_layout
 
 \begin_layout Subsection
@@ -1137,7 +1137,7 @@ reference "sub:Speed"
 
 \end_inset
 
- can be adressed.
+ can be addressed.
  Another possibility would be that the data points we index now are not
  actually what recruiters are interested in.
  This could mean that we need other data sources than the ones we chose
@@ -1284,7 +1284,7 @@ Other sources named by Capiluppi et al.
  These sites either automatically scrape all kinds of data about users from
  all over the internet, or they allow users to specifically create their
  own profile and link all remote websites themselves.
- The good thing is, that sites doing this specifically for softtware development
+ The good thing is, that sites doing this specifically for software development
  exist (eg.
  
 \begin_inset Flex URL
