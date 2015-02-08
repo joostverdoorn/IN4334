@@ -770,6 +770,274 @@ table
 \end_layout
 
 \begin_layout Section
+Discussion
+\end_layout
+
+\begin_layout Standard
+There are multiple aspects of our approach that are sub-optimal.
+\end_layout
+
+\begin_layout Subsection
+Denormalisation
+\end_layout
+
+\begin_layout Standard
+The first is that we denormalise all data.
+ This makes it easier to search through all data, but denormalising the
+ data first takes more time.
+ Also when there are new data dumps of StackOverflow, which is the starting
+ point of our database, it will be hard to incorporate all changes with
+ our current setup.
+ This could either be circumvented by trying to get only the differences
+ between the most recent and second to last data dump of StackOverflow,
+ or we have to think about a way to not denormalise the data as we do now.
+\end_layout
+
+\begin_layout Subsection
+Scraping other sites
+\end_layout
+
+\begin_layout Standard
+The availability of the StackOverflow data via their official data dumps
+ is very useful in this context, but other data providers are not very willing
+ to give all their data away at once.
+ Luckily for GitHub we have access to the third-party project GHTorrent,
+ but for other sites projects like this do not exist at this moment.
+ Some of them, especially Facebook, even have very hard restrictions to
+ how many requests to their API can be made per given timeframe.
+ For example for Facebook it would take several days just to retrieve all
+ profiles as they are now and there is no way to know when this data is
+ outdated again.
+ Twitter, LinkedIn and Google+ also have limits to their API, although higher
+ than Facebook, but they allow for a more requests per second.
+ Again, for these sites we have no ability to know when a profile was updated
+ which makes keeping our data set up to date infeasible, as we would have
+ to request all profiles repeatedly over time.
+ This is probably something the operators of those sites would not like
+ us to do and it is also quite counterproductive.
+\end_layout
+
+\begin_layout Subsection
+Speed
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Speed"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Another aspect that would need attention is the speed at which search queries
+ run now.
+ To quickly find people satisfying certain search criteria, we still need
+ to iterate over all entries in the database as of this moment.
+ We added elasticsearch because that engine is usually better in these kind
+ of search queries than querying directly MongoDB, but also elasticsearch
+ can be quite slow.
+ This happens because we use scoring functions for certain keywords in for
+ example the used tags.
+ This is information elasticsearch does not have indexed as of this moment
+ in our implementation.
+ In practice elasticsearch is only really fast when used with filtering
+ and facetted search.
+\end_layout
+
+\begin_layout Subsection
+Practical use
+\end_layout
+
+\begin_layout Standard
+We have not spoken to potential users of this search engine during the developme
+nt of it.
+ Therefore we do not exactly know how recruiters would like to filter their
+ potential candidates as of this moment.
+ Knowing this possibly makes it easier to structure the data in such a way
+ that the problems described in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Speed"
+
+\end_inset
+
+ can be adressed.
+ Another possibility would be that the data points we index now are not
+ actually what recruiters are interested in.
+ This could mean that we need other data sources than the ones we chose
+ now (section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Sources"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsection
+Sources
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Sources"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We started this research on profile creation with the users of StackOverflow
+ because we quickly noticed that many people on that site have their account
+ linked to a Facebook account.
+ From there on, we searched through the entire data set for the use of more
+ social networks.
+ From that information we chose to include Twitter, LinkedIn, GitHub and
+ Google+ as well.
+ There is of course the possibility that there are more suitable sources
+ for data.
+ Some of these are discussed by Capiluppi et al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Capiluppi2012"
+
+\end_inset
+
+.
+ One interesting source they name is bitbucket, a competitor to GitHub.
+ Unfortunately especially bitbucket is mainly used for closed-source projects
+ which we could not get access to.
+ To see how popular these services actually are, we went queried the Google
+ Search statistics and came up with the graph shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Search-trends-on"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/github_bitbucket_googlecode_sourceforge.png
+	scale 40
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Search-trends-on"
+
+\end_inset
+
+Search trends on Google Search for the keywords 
+\begin_inset Quotes eld
+\end_inset
+
+GitHub
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+Bitbucket
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+Google Code
+\begin_inset Quotes erd
+\end_inset
+
+ and SourceForge from January 2004 - January 2015
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As we can see from this graph, according to the search interest of the users
+ of Google Search, SourceForge is a dying project.
+ Also even though bitbucket is growing, it is still tiny compared to bothe
+ GitHub and Google Code.
+ Also as of January 2015 GitHub surpassed Google Code in popularity.
+ Judging from this data it seems like a good idea to also try to match people
+ from StackOverflow to contributions on Google Code projects.
+\end_layout
+
+\begin_layout Standard
+Other sources named by Capiluppi et al.
+ are so called profile aggregation sites.
+ These sites either automatically scrape all kinds of data about users from
+ all over the internet, or they allow users to specifically create their
+ own profile and link all remote websites themselves.
+ The good thing is, that sites doing this specifically for softtware development
+ exist (eg.
+ 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://masterbranch.com
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://coderwall.com
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://geekli.st
+\end_layout
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Section
 Conclusions
 \end_layout
 
