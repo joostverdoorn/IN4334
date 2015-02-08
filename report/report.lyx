@@ -283,8 +283,15 @@ reference "sub:Linking-the-profiles"
 
  we will show how we combined this data to build complete profiles of the
  users.
- In section XX discuss what cues we can use to detect if a user is deemed
- skilled in a particular topic.
+ In section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Measuring-skill"
+
+\end_inset
+
+ discuss what cues we can use to detect if a user is deemed skilled in a
+ particular topic.
  In section 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -317,21 +324,21 @@ name "sec:Related-Work"
 \end_layout
 
 \begin_layout Standard
-In 
+Vasilescu et al.
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "StackGitHub"
 
 \end_inset
 
-, Bogdan Vasilescu et al.
  use the StackOverflow data dump, and a similar data dump of GitHub (GHTorrent)
  to research behavioral patterns of users who use both platforms.
  They discuss how they linked the profiles from both websites, and how they
  use the combined data to show how interaction on one website influences
  or is influenced by interaction on the other.
- They find that people who commit more often on GitHub are more active answerers
- on StackOverflow.
+ They find that people who commit more often on GitHub are more active at
+ answering questions on StackOverflow.
  They also find that asking a question on StackOverflow often catalyzes
  committing on GitHub, suggesting that answers provided helped the user
  in finishing the commit.
@@ -979,6 +986,21 @@ In addition to this matching by user name we have more options to link users.
 \end_layout
 
 \begin_layout Subsection
+Measuring skill
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Measuring-skill"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+TODO
+\end_layout
+
+\begin_layout Subsection
 Searching within the data
 \begin_inset CommandInset label
 LatexCommand label
@@ -1413,7 +1435,45 @@ Conclusions
 \end_layout
 
 \begin_layout Standard
-bla bla TODO
+In this paper we studied the feasibility of creating a search engine capable
+ of finding skillful software developers using only open data sources.
+ We found that specifically for software development this is indeed possible,
+ thanks to the big Question & Answer site StackOverflow and the upcoming
+ phenomenon 
+\begin_inset Quotes eld
+\end_inset
+
+social coding
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Starting with the user database of StackOverflow we started retrieving the
+ linked Facebook profiles.
+ From there on we also started to look up all links to other popular social
+ networking sites.
+ For GitHub we made use of the unofficial data dumps made available by GHTorrent.
+ This significantly sped up the process of finding GitHub's users.
+ After retrieving the user profiles from the other sites we could then link
+ profiles based on real name, full name and location.
+ These aggregated profiles then contained everything we could find about
+ a user, including personal details like the name but also the work history,
+ education and favorite programming languages.
+\end_layout
+
+\begin_layout Standard
+While implementing this system we found however that more research is required
+ to really make a free alternative to LinkedIn Premium (for example).
+ For one thing we should rethink which data is actually important.
+ Researching this with the help of people that would actually use this tool
+ (recruiters) is probably the best path to take.
+ When these priorities are defined, this gained knowledge should be applied
+ to the data structure to ensure decent performances while using the system.
+ This new data structure should also prevent the degree of denormalisation
+ we face now; this denormalisation prevents keeping the data set up to date.
 \end_layout
 
 \begin_layout Appendices
