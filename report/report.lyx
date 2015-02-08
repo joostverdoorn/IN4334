@@ -342,15 +342,24 @@ key "StackGitHub"
  They also find that asking a question on StackOverflow often catalyzes
  committing on GitHub, suggesting that answers provided helped the user
  in finishing the commit.
+\end_layout
+
+\begin_layout Standard
+Capiluppi et al.
  
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Capiluppi2012"
 
-\begin_layout Subsection
-subsection
-\end_layout
+\end_inset
 
-\begin_layout Subsection
-another subsection
+ write about how to find skillful people in online communities targeted
+ at nontechnical recruiters.
+ They point out key metrics on Question & Answer websites (eg.
+ StackOverflow), social coding websites (eg.
+ GitHub, bitbucket), profile aggregators and more.
+ This data is useful to our research because it gives guidance in the flood
+ of data points different sites give us.
 \end_layout
 
 \begin_layout Section
