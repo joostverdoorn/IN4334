@@ -1275,6 +1275,15 @@ One obvious aspect of scoring candidates involves language proficiency.
 Framework knowledge
 \end_layout
 
+\begin_layout Standard
+Recruiters also often look for experience in popular frameworks.
+ Although apart from direct contributions to these frameworks it may be
+ hard to retrieve whether or not a user has used a particular framework,
+ StackOverflow activity may hint toward the usage.
+ Besides that, it's possible to use data retrieved Google+ and Twitter to
+ detect 
+\end_layout
+
 \begin_layout Subsection
 Location
 \end_layout
@@ -1305,7 +1314,9 @@ Team player
 \end_layout
 
 \begin_layout Standard
-A team player contributes 
+A team player contributes and communicates on GitHub.
+ Cues for finding team players could be the discussion taking place on GitHub,
+ and the number of multi-person repositories a person contributes to.
 \end_layout
 
 \begin_layout Subsection
@@ -1313,7 +1324,8 @@ Community builder
 \end_layout
 
 \begin_layout Standard
-A community builder can be found 
+A community builder can be also mainly be found on GitHub.
+ 
 \end_layout
 
 \begin_layout Subsection
