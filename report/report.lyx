@@ -363,7 +363,7 @@ key "Capiluppi2012"
 \end_layout
 
 \begin_layout Section
-Earlier Research
+Early Research
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Orientation"
@@ -1341,7 +1341,52 @@ Results
 \end_layout
 
 \begin_layout Standard
-TODO
+As described in the earlier sections, our test implementation makes use
+ of the (almost) complete data sets of StackOverflow and GitHub augmented
+ with some data from Twitter, Facebook, Google+ and LinkedIn.
+ We denormalized this data to create big aggregated user profiles within
+ a MongoDB collection.
+\end_layout
+
+\begin_layout Standard
+From all 
+\begin_inset Formula $3473095$
+\end_inset
+
+ StackOverflow users available in the data dump (of those 
+\begin_inset Formula $1409404$
+\end_inset
+
+ users have 
+\begin_inset Formula $>1$
+\end_inset
+
+ reputation, or in other words, contributed to the site in any way).
+ Of those currently only 
+\begin_inset Formula $8724$
+\end_inset
+
+ users are linked corresponding GitHub accounts, 
+\begin_inset Formula $2819$
+\end_inset
+
+ to Twitter, 
+\begin_inset Formula $41842$
+\end_inset
+
+ to Facebook and unfortunately at this moment nobody from Google+ and LinkedIn
+ yet.
+ During this research we focused more on the theory about this profile aggregati
+on than spending time to actually apply it on a large scale.
+ Of course storing more data is essential for the success of a tool like
+ this.
+\end_layout
+
+\begin_layout Standard
+Even though we hardly have any data, we can perform some queries on it that
+ deliver expectable results.
+ TODO queries.
+ Wachten op Joost zZz
 \end_layout
 
 \begin_layout Standard
