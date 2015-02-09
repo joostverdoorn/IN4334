@@ -919,29 +919,6 @@ The entire StackOverflow data dump has a size of just below 90 gigabytes.
 \end_layout
 
 \begin_layout Subsubsection
-Storage in MongoDB
-\end_layout
-
-\begin_layout Standard
-Within MongoDB a single collection with initially the StackOverflow users
- was created.
- This collection was then augmented to also hold information about the tags
- a specific user ever used.
- Internally these were stored as a list of tags, rather than a single continuous
- string, as StackOverflow does.
-\end_layout
-
-\begin_layout Standard
-Next to this augmented StackOverflow user collection, new collections were
- made for the scraped data of the other online profile websites.
- 
-\series bold
-TODO: This was switched with Denormalisation as mongodb is really the reaon
- the data had to be denormalized.
- Check if the order is still okay.
-\end_layout
-
-\begin_layout Subsubsection
 Denormalisation
 \end_layout
 
@@ -964,6 +941,24 @@ Since the goal was to create something that resembles a search engine to
  than 38.000 tags at the time the data dump was created), a relational database
  with for example one column per tag would be a weird design.
  Finally, as database software, we picked the NoSQL database MongoDB.
+\end_layout
+
+\begin_layout Subsubsection
+Storage in MongoDB
+\end_layout
+
+\begin_layout Standard
+Within MongoDB a single collection with initially the StackOverflow users
+ was created.
+ This collection was then augmented to also hold information about the tags
+ a specific user ever used.
+ Internally these were stored as a list of tags, rather than a single continuous
+ string, as StackOverflow does.
+\end_layout
+
+\begin_layout Standard
+Next to this augmented StackOverflow user collection, new collections were
+ made for the scraped data of the other online profile websites.
 \end_layout
 
 \begin_layout Subsection
