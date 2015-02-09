@@ -261,15 +261,22 @@ reference "sec:Related-Work"
  Section 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sec:Methodology"
+reference "sub:Orientation"
 
 \end_inset
 
- explains what our goal of this research is.
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Research-Goal"
+
+\end_inset
+
+ explain what our goal of this research is.
  In section 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Mining-more-data"
+reference "sub:Exploiting-direct-links"
 
 \end_inset
 
@@ -277,7 +284,7 @@ reference "sub:Mining-more-data"
  In section 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Linking-the-profiles"
+reference "sub:Linking-the-data"
 
 \end_inset
 
@@ -735,6 +742,13 @@ As we could not find a way to automatically detect the gender of other users
 
 \begin_layout Section
 Research Goal
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Research-Goal"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -954,6 +968,13 @@ Since the goal was to create something that resembles a search engine to
 
 \begin_layout Subsection
 Exploiting direct links
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Exploiting-direct-links"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1076,7 +1097,14 @@ Google+
 \end_layout
 
 \begin_layout Subsection
-Linking more data
+Linking the data
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Linking-the-data"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
