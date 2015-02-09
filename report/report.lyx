@@ -1550,7 +1550,7 @@ reference "fig:Search-trends-on"
 
 \begin_layout Standard
 \begin_inset Float figure
-wide true
+wide false
 sideways false
 status open
 
@@ -1558,7 +1558,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/github_bitbucket_googlecode_sourceforge.png
-	scale 80
+	scale 40
 	clip
 
 \end_inset
